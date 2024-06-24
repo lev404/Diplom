@@ -170,7 +170,7 @@ namespace _Диплом.Windows
                 AppData.db.SaveChanges();
 
                 DataCarGrid.ItemsSource = AppData.db.Автомобиль.ToList();
-                MessageBox.Show("Строка успешно удалена!");
+                MessageBox.Show("Строка успешно удалеdна!");
             }
         }
 
