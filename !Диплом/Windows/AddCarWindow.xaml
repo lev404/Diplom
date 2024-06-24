@@ -1,0 +1,33 @@
+﻿<Window x:Class="_Диплом.Windows.AddCarWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_Диплом.Windows"
+        mc:Ignorable="d"
+        Title="Добавление автомобиля" Height="720" Width="1080" MinHeight="600" MinWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Марка" FontSize="30" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox x:Name="BrandBox" Grid.Column="0" Grid.Row="1" FontSize="32" VerticalContentAlignment="Center"/>
+        <TextBlock Text="Регистрационный номер" FontSize="30" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox x:Name="RegPlateBox" Grid.Row="1" Grid.Column="1" FontSize="32" VerticalContentAlignment="Center"/>
+        <TextBlock Text="Тип авто" FontSize="30" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <ComboBox x:Name="CarTypeBox" FontSize="32" Grid.Column="1" Grid.Row="3" DisplayMemberPath="НазваниеТипа"/>
+        <TextBlock Text="Тип топлива" FontSize="30" Grid.Column="2" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <ComboBox x:Name="FuelType" Grid.Column="2" Grid.Row="1" FontSize="32" DisplayMemberPath="КодМарки"/>
+        <Button x:Name="AddButton" Click="AddButtonClick" Content="Добавить" FontSize="32" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button x:Name="CancelBtn" Click="CancelBtnClick" Content="Отмена" FontSize="32" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+    </Grid>
+</Window>

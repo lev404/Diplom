@@ -1,0 +1,61 @@
+﻿<Window x:Class="_Диплом.Windows.AddListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_Диплом.Windows"
+        mc:Ignorable="d"
+        Title="Добавление путевого листа" Height="720" Width="1080" MinHeight="600" MinWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Водитель" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" Grid.Row="0" Grid.Column="0"/>
+        <ComboBox x:Name="UserComboBox" Grid.Row="1" DisplayMemberPath="Фамилия"  Grid.Column="0" FontSize="32"/>
+        <TextBlock Text="Автомобиль" Grid.Row="2" Grid.Column="0" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <ComboBox x:Name="CarComboBox" Grid.Row="3" Grid.Column="0" DisplayMemberPath="РегистрационныйНомер" FontSize="32"/>
+        <TextBlock Text="Прицеп" FontSize="24" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <ComboBox x:Name="TrailerComboBox" Grid.Column="0" Grid.Row="5" FontSize="32" DisplayMemberPath="РегистрационныйНомер"/>
+        <TextBlock Text="Заказчик" FontSize="24" Grid.Row="6" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <ComboBox x:Name="ZakazchikComboBox" Grid.Column="0" Grid.Row="7" FontSize="32" DisplayMemberPath="НаименованиеОрганизации"/>
+        <TextBlock Text="Выезд из гаража по графику" Grid.Row="8" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24"/>
+        <TextBox x:Name="GarageExitTimePlaned" Grid.Column="0" Grid.Row="9" FontSize="32"/>
+        <TextBlock Text="Выезд из гаража фактический" FontSize="24" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox x:Name="GarageExitTimeFacted" Grid.Column="1" Grid.Row="1" FontSize="32"/>
+        <TextBlock Text="Нулевой пробег до выезда" FontSize="24" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox x:Name="ZeroMillage" Grid.Column="1" Grid.Row="3" FontSize="32"/>
+        <TextBlock Text="Показание спидометра до выезда" FontSize="24" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox x:Name="SpeedometrMIllage" Grid.Row="5" Grid.Column="1" FontSize="32"/>
+        <TextBlock Text="Выдано горючего" FontSize="24" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox x:Name="FuelAdded" Grid.Column="1" Grid.Row="7" FontSize="32"/>
+        <TextBlock Text="Остаток горючего при выезде" FontSize="24" Grid.Column="1" Grid.Row="8" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox x:Name="FuelLeft" Grid.Row="9" Grid.Column="1" FontSize="32"/>
+        <TextBlock Text="Адрес пункта погрузки" FontSize="24" Grid.Column="2" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox x:Name="LoadingAdress" Grid.Row="1" Grid.Column="2" FontSize="32"/>
+        <TextBlock Text="Адрес Разгрузки" FontSize="24" Grid.Column="2" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox x:Name="UnloadingAdress" Grid.Row="3" Grid.Column="2" FontSize="32"/>
+        <TextBlock Text="Продукт" FontSize="24" Grid.Column="2" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <ComboBox x:Name="ProductComboBox" Grid.Column="2" Grid.Row="5" DisplayMemberPath="Название" FontSize="32"/>
+        <TextBlock Text="Расстояние" FontSize="24" Grid.Row="6" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox x:Name="Distance" Grid.Row="7" Grid.Column="2" FontSize="32"/>
+        <TextBlock Text="Тип путевого листа" FontSize="24" Grid.Column="2" Grid.Row="8" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <ComboBox x:Name="ListTypeComboBox" Grid.Column="2" Grid.Row="9" FontSize="32" DisplayMemberPath="Наименование"/>
+        <Button x:Name="AddListBtn" Click="AddListBtnClick" Content="Добавить" FontSize="24" Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button x:Name="CancelListBtn" Click="CancelBtnClick" Content="Отмена" FontSize="24" Grid.Column="1" Grid.Row="10" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    </Grid>
+</Window>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0e53b1bb8946452eb372c05c9e1d01dc" Name="Diagram1">
+        <EntityTypeShape EntityType="dbModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbModel.Автомобиль" Width="1.5" PointX="10" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbModel.Заказчик" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbModel.Пользователь" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbModel.Прицеп" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbModel.Продукт" Width="1.5" PointX="3" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbModel.ПутевойЛист" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbModel.Роль" Width="1.5" PointX="7.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbModel.ТипАвтомобиля" Width="1.5" PointX="7.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbModel.ТипПрицепа" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbModel.ТипПутевогоЛиста" Width="1.5" PointX="3" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbModel.ТипТоплива" Width="1.5" PointX="7.75" PointY="5.25" IsExpanded="true" />
+        <AssociationConnector Association="dbModel.FK_Автомобиль_ТипАвтомобиля" ManuallyRouted="false" />
+        <AssociationConnector Association="dbModel.FK_Автомобиль_ТипТоплива" ManuallyRouted="false" />
+        <AssociationConnector Association="dbModel.FK_ПутевойЛист_Заказчик" ManuallyRouted="false" />
+        <AssociationConnector Association="dbModel.FK_ПутевойЛист_Пользователь" ManuallyRouted="false" />
+        <AssociationConnector Association="dbModel.FK_Прицеп_ТипПрицепа" ManuallyRouted="false" />
+        <AssociationConnector Association="dbModel.FK_ПутевойЛист_Прицеп" ManuallyRouted="false" />
+        <AssociationConnector Association="dbModel.FK_ПутевойЛист_Продукт" ManuallyRouted="false" />
+        <AssociationConnector Association="dbModel.FK_ПутевойЛист_ТипПутевогоЛиста" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

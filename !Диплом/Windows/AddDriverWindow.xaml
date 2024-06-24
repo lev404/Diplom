@@ -1,0 +1,56 @@
+﻿<Window x:Class="_Диплом.Windows.AddDriverWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_Диплом.Windows"
+        mc:Ignorable="d"
+        Title="Добавление водителя" Height="720" Width="1080" MinHeight="600" MinWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Фамилия" FontSize="32" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox x:Name="SurnameBox" Grid.Row="1" Grid.Column="0" FontSize="32" VerticalContentAlignment="Center"/>
+        <TextBlock Text="Имя" FontSize="32" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBox x:Name="NameBox" Grid.Row="3" Grid.Column="0" FontSize="32" VerticalContentAlignment="Center"/>
+        <TextBlock Text="Отчество" FontSize="32" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox x:Name="LastNameBox" Grid.Row="5" Grid.Column="0" FontSize="32" VerticalContentAlignment="Center"/>
+        <TextBlock Text="Дата рождения" FontSize="32" Grid.Column="0" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <DatePicker x:Name="BirthdayBox" Grid.Row="7" Grid.Column="0" VerticalContentAlignment="Center"  FontSize="32"/>
+        <TextBlock Text="Пол" FontSize="32" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <ComboBox x:Name="GenderBox" Grid.Row="1" Grid.Column="1" FontSize="32">
+            <ComboBoxItem Content="М"/>
+            <ComboBoxItem Content="Ж"/>
+        </ComboBox>
+        <TextBlock Text="Роль" FontSize="32" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <ComboBox x:Name="RoleBox" Grid.Row="3" Grid.Column="1" FontSize="32" DisplayMemberPath="НазваниеРоли"/>
+        <TextBlock Text="Серия паспорта" FontSize="32" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox x:Name="PassportSeias" Grid.Row="5" Grid.Column="1" FontSize="32" VerticalContentAlignment="Center"/>
+        <TextBlock Text="Номер паспорта" FontSize="32" Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox x:Name="PassportNumber" Grid.Row="7" Grid.Column="1" FontSize="32" VerticalContentAlignment="Center"/>
+        <TextBlock Text="Номер лицензии" FontSize="32" Grid.Column="2" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox x:Name="LicenseNumber" Grid.Row="1" Grid.Column="2" FontSize="32" VerticalContentAlignment="Center"/>
+        <TextBlock Text="Номер телефона" FontSize="32" Grid.Column="2" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox x:Name="PhoneNumber" Grid.Row="3" Grid.Column="2" FontSize="32" VerticalContentAlignment="Center"/>
+        <TextBlock Text="Логин" FontSize="32" Grid.Column="2" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox x:Name="Login" Grid.Row="5" Grid.Column="2" FontSize="32" VerticalContentAlignment="Center"/>
+        <TextBlock Text="Пароль" FontSize="32" Grid.Column="2" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox x:Name="Password" Grid.Row="7" Grid.Column="2" FontSize="32" VerticalContentAlignment="Center"/>
+        <Button x:Name="AddDriverBtn" Click="AddDriverBtnClick" Content="Добавить" FontSize="32" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="8" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button x:Name="CancelBtn" Click="CancelBtnClick" Content="Отмена" FontSize="32" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="8" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+    </Grid>
+</Window>

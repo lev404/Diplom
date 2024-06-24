@@ -1,0 +1,198 @@
+﻿<Window x:Class="_Диплом.Windows.SupervisorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_Диплом.Windows"
+        mc:Ignorable="d" Loaded="PageLoaded"
+        Title="Окно Руководителя" Height="720" Width="1080" MinHeight="600" MinWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TabControl Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="9">
+            <TabItem Header="Путевые листы">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="AddListBtn" Click="AddListBtnClick" Content="Добавить" Grid.Column="0"  Grid.Row="6" FontSize="28" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Button x:Name="SaveListBtn" Click="SaveListBtnClick" Content="Сохранить" FontSize="32" Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Button x:Name="EditListBtn" Click="EditListBtnClick" Content="Редактировать" Grid.Column="2"  Grid.Row="6" FontSize="28" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Button x:Name="DeleteListBtn" Click="DeleteListBtnClick" Content="Удалить" FontSize="32" Grid.Column="3" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <DataGrid x:Name="DataListGrid" IsReadOnly="True" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="6" ColumnWidth="*" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding ListID}" MaxWidth="80"/>
+                            <DataGridTextColumn Header="Водитель" Binding="{Binding UserID}"/>
+                            <DataGridTextColumn Header="Автомобиль" Binding="{Binding CarID}"/>
+                            <DataGridTextColumn Header="Прицеп" Binding="{Binding TrailerID}"/>
+                            <DataGridTextColumn Header="Заказчик" Binding="{Binding ZakazchikID}"/>
+                            <DataGridTextColumn Header="Выезд из гаража по графику" Binding="{Binding ВыездИзГаражаПоГрафику}"/>
+                            <DataGridTextColumn Header="Выезд из гаража фактический" Binding="{Binding ВыездИзГаражаФактический}"/>
+                            <DataGridTextColumn Header="Нулевой пробег" Binding="{Binding НулевойПробегДоВыезда}"/>
+                            <DataGridTextColumn Header="Показание спидометра до выезда" Binding="{Binding ПоказаниеСпидометраДоВыезда}"/>
+                            <DataGridTextColumn Header="Выдано горючего" Binding="{Binding ВыданоГорючего}"/>
+                            <DataGridTextColumn Header="Остаток горючего при выезде" Binding="{Binding ОстатокГорючегоПриВыезде}"/>
+                            <DataGridTextColumn Header="Адрес пункта погрузки" Binding="{Binding АдресПунктаПогрузки}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style>
+                                        <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+                                        <Setter Property="TextBlock.TextAlignment" Value="Left"/>
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="Адрес пункта разгрузки" Binding="{Binding АдресПунктаРазгрузки}">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style>
+                                        <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+                                        <Setter Property="TextBlock.TextAlignment" Value="Left"/>
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="ID продукта" Binding="{Binding ProductID}"/>
+                            <DataGridTextColumn Header="Расстояние поездки" Binding="{Binding Расстояние}"/>
+                            <DataGridTextColumn Header="Тип путевого листа" Binding="{Binding ТипПутевогоЛиста}"/>
+
+
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button x:Name="toExcelBtn" Click="toExcelBtnClick" Content="Экспорт в Excel" FontSize="32" Grid.Column="4" Grid.Row="6" HorizontalAlignment="Center" Height="47" VerticalAlignment="Center"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Пользователи">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="AddUserBtn" Click="AddUserBtnClick" Content="Добавить" Grid.Column="0" Grid.Row="6" FontSize="28" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Button x:Name="EditUserBtn" Click="EditUserBtnClick" Content="Редактировать" Grid.Column="1" Grid.Row="6" FontSize="28" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Button x:Name="SaveUserBtn" Click="SaveUserBtnClick" Content="Сохранить" FontSize="32" Grid.Column="2" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Button x:Name="DeleteUserBtn" Click="DeleteUserBtnClick" Content="Удалить" FontSize="32" Grid.Column="3" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <DataGrid x:Name="DataUserGrid" AutoGenerateColumns="False" ColumnWidth="*" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="6">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding UserID}"/>
+                            <DataGridTextColumn Header="Фамилия" Binding="{Binding Фамилия}"/>
+                            <DataGridTextColumn Header="Имя" Binding="{Binding Имя}"/>
+                            <DataGridTextColumn Header="Отчество" Binding="{Binding Отчество}"/>
+                            <DataGridTextColumn Header="Дата рождения" Binding="{Binding ДатаРождения}"/>
+                            <DataGridTextColumn Header="Пол" Binding="{Binding Пол}"/>
+                            <DataGridTextColumn Header="Роль" Binding="{Binding Роль}"/>
+                            <DataGridTextColumn Header="Серия паспорта" Binding="{Binding СерияПаспорта}"/>
+                            <DataGridTextColumn Header="Номер телефона" Binding="{Binding НомерТелефона}"/>
+                            <DataGridTextColumn Header="Номер лицензии" Binding="{Binding НомерЛицензии}"/>
+                            <DataGridTextColumn Header="Логин" Binding="{Binding Логин}"/>
+                            <DataGridTextColumn Header="Пароль" Binding="{Binding Пароль}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Автомобили">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="AddCarBtn" Click="AddCarBtnClick" Content="Добавить" Grid.Column="0" Grid.Row="6" FontSize="28" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    <Button x:Name="EditCarBtn" Click="EditCarBtnClick" Content="Редактировать" Grid.Column="1" Grid.Row="6" FontSize="28" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    <Button x:Name="SaveCarBtn" Click="SaveCarBtnClick" Content="Сохранить" FontSize="32" Grid.Column="2" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    <Button x:Name="DeleteCarBtn" Click="DeleteCarBtnClick" Content="Удалить" FontSize="32" Grid.Column="3" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <DataGrid x:Name="DataCarGrid" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="6" AutoGenerateColumns="False" ColumnWidth="*" >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding CarID}"/>
+                            <DataGridTextColumn Header="Марка" Binding="{Binding Марка}"/>
+                            <DataGridTextColumn Header="Номер" Binding="{Binding РегистрационныйНомер}"/>
+                            <DataGridTextColumn Header="Тип Автомобиля" Binding="{Binding ТипАвтомобиля}"/>
+                            <DataGridTextColumn Header="Тип Топлива" Binding="{Binding ТипТоплива}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Прицепы">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="AddTrailerBtn" Click="AddTrailerBtnClick" Content="Добавить" Grid.Column="0" Grid.Row="6" FontSize="28" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Button x:Name="EditTrailerBtn" Click="EditTrailerBtnClick" Content="Редактировать" Grid.Column="1" Grid.Row="6" FontSize="28" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Button x:Name="SaveTrailerBtn" Click="SaveTrailerBtnClick" Content="Сохранить" FontSize="32" Grid.Column="2" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Button x:Name="DeleteTrailerBtn" Click="DeletreTrailerBtnClick" Content="Удалить" FontSize="32" Grid.Column="3" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <DataGrid x:Name="DataTrailerGrid" Grid.Row="0" Grid.Column="0" Grid.RowSpan="6" Grid.ColumnSpan="4" AutoGenerateColumns="False" ColumnWidth="*">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding TrailerID}"/>
+                            <DataGridTextColumn Header="Марка" Binding="{Binding Марка}"/>
+                            <DataGridTextColumn Header="Регистрационный номер" Binding="{Binding РегистрационныйНомер}"/>
+                            <DataGridTextColumn Header="Гаражный номер" Binding="{Binding ГаражныйНомер}"/>
+                            <DataGridTextColumn Header="Тип прицепа" Binding="{Binding ТипПрицепа}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button x:Name="ExitBtn" Click="ExitBtnClick" Content="Выход" FontSize="36" Grid.Column="4" Grid.Row="9" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    </Grid>
+</Window>
